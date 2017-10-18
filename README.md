@@ -20,7 +20,9 @@ where:
 
 Name the output files in that way because frame names are related with ground truth data that we've got earlier. Repeat this command for each video you have, changing names of input and output files.
 
-I've got almost 166k frames but we have labeled only each 200th frame. That's why we needed to name our frames as I said above. I've used a python script to select labeled files and move them to a separate folder.
+I've got almost 166k frames but we have labeled only each 200th frame. That's why we needed to name our frames as I said above. I've used a python script to select labeled files and move them to a separate folder. *python script link*
+
+Before starting the script make sure you have created folders for the train and test data, while execution it will ask you to select a groud truth data file, a folder with images and a folder to save.
 
 If you're too lazy to do it, I've prepared the ready to use data. HERE SHOULD BE A LINK!
 
