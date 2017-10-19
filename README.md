@@ -7,7 +7,7 @@ Before we start you need to install the following packages: [OpenCV](https://ope
 ### Preparing a dataset
 For this project I've used [MIT Traffic Data Set](http://www.ee.cuhk.edu.hk/~xgwang/MITtraffic.html). They provide a set of videos recorded by stationary camera and 2 matlab files with manually labelled pedestrians that are available by the [link](http://www.ee.cuhk.edu.hk/~xgwang/MIT_traffic_ground_truth_data.tar.gz).
 
-To futher work we need to extract frames from videos, it's possible by using [ffmpeg](https://www.ffmpeg.org/). If you're using Arch Linux you can install it with pacman
+To further work we need to extract frames from videos, it's possible by using [ffmpeg](https://www.ffmpeg.org/). If you're using Arch Linux you can install it with pacman
 ```
 pacman -S ffmpeg
 ```
@@ -49,7 +49,7 @@ We're going to try train our network to find only persons, so we have only one c
 
 Let's create the train.list, the easiest way to do it is to use a command (make sure that you're in folder with train and test folders) `find /test -name \*.png > test.list`
 
-As a result you'll get something similar with this ![screen1]()
+As a result you'll get something similar with this ![](https://image.ibb.co/gOM0BR/125.png)
 
 Repeat this step for test images.
 
@@ -67,6 +67,20 @@ To start training we also need a set of convulutional weights. We can get it fro
 
 ## Training
 
+Time to start training. .data and .cfg files we put into /cfg. To start type into terminal the following command:
+```
+./darknet detector train cfg/pedestrian_ground_truth.data cfg/pedestrian.cfg darknet19_448.conv.23
+```
+You'll se the similar situation in your terminal ![](https://image.ibb.co/drPLBR/126.png)
 
+If you have a *CUDA out of memory* error you may try to increase the number of `subdivisions` or change the `batch` size or change the network-resolution.
+
+After each iteration we have a summary:
+
+4: 314.345232, **332.818970 avg**, 0.001000 rate, 5.993169 seconds, 240 images
+
+avg - means average loss, we should stop training at the lowest value possible. When avg starts to grow up that means that we have an overfitting and should stop further training.
+
+Each 100th iteration darknet saves pretrained weights to the backup folder.
 
 
