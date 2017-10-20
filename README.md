@@ -83,4 +83,7 @@ avg - means average loss, we should stop training at the lowest value possible. 
 
 Each 100th iteration darknet saves pretrained weights to the backup folder.
 
+## Results
+
+I've stopped training after 700th iteration because `average loss` started to grow up and on tests cnn couldn't find any objects. I've tested weights that I've had and realized that 500th works the best in my situation. CNN is able to recognize pedestrians on images of this dataset without mistakes and can recognize on a video with some inaccuracies.
 
