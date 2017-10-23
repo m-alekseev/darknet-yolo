@@ -94,7 +94,9 @@ I've stopped training after 700th iteration because `average loss` started to gr
 As a result we'll see an image (if OpenCV is enabed)
 
 ![](https://image.ibb.co/icVHfm/predictions.jpg)
+
 Of course sometimes when pedestrians just stuck in each other detector can not recognize them as 2 persons but at least we have them found. 
+
 I've tested detector on images that weren't included to train/test data and it has shown quite good results.
 
 
