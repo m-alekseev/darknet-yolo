@@ -85,5 +85,16 @@ Each 100th iteration darknet saves pretrained weights to the backup folder.
 
 ## Results
 
-I've stopped training after 700th iteration because `average loss` started to grow up and on tests cnn couldn't find any objects. I've tested weights that I've had and realized that 500th works the best in my situation. CNN is able to recognize pedestrians on images of this dataset without mistakes and can recognize on a video with some inaccuracies.
+I've stopped training after 700th iteration because `average loss` started to grow up and on tests cnn couldn't find any objects. I've tested weights that I've had and realized that 500th works the best in my situation. CNN is able to recognize pedestrians on images of this dataset without mistakes and can recognize on a video with some inaccuracies. So, to see results we should have pretrained `.weights` files. I recommend to use 500th weights because it gives the best results. To test type the following command (make sure that you've changed `batch size` and `subdivisions` to 1 in a config file):
+```
+./darknet detector test cfg/pedestrian_ground_truth.data cfg/pedestrian.cfg backup/pedestrian_500.weights data/pedestrian_ground_truth/test/test_image.png
+```
+![](https://image.ibb.co/cewOLm/127.png)
+
+As a result we'll see an image (if OpenCV is enabed)
+
+![](https://image.ibb.co/icVHfm/predictions.jpg)
+Of course sometimes when pedestrians just stuck in each other detector can not recognize them as 2 persons but at least we have them found. 
+I've tested detector on images that weren't included to train/test data and it has shown quite good results.
+
 
