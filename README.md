@@ -21,7 +21,7 @@ where:
 
 Name the output files in that way because frame names are related with ground truth data that we've got earlier. Repeat this command for each video you have, changing names of input and output files.
 
-I've got almost 166k frames but we have labeled only each 200th frame. That's why we needed to name our frames as I said above. I've used a python script to select labeled files and move them to a separate folder. Here is a [script](process_data.py).
+I've got almost 166k frames but we have labeled only each 200th frame. That's why we needed to name our frames as I said above. I've used a python script to select labeled files and move them to a separate folder. Here is the [script](process_data.py).
 
 Before starting the script make sure you have created folders for the train and test data, while execution it will ask you to select a groud truth data file, a folder with images and a folder to save.
 
@@ -93,10 +93,12 @@ I've stopped training after 700th iteration because `average loss` started to gr
 
 As a result we'll see an image (if OpenCV is enabed)
 
-![](https://image.ibb.co/icVHfm/predictions.jpg)
+![](https://image.ibb.co/fOyEbR/128.png)
 
 Of course sometimes when pedestrians just stuck in each other detector can not recognize them as 2 persons but at least we have them found. 
 
-I've tested detector on images that weren't included to train/test data and it has shown quite good results.
+I've tested detector on images that weren't included to train/test data and it has shown quite good results. With our weights, detector shows much better accuracy than default `yolo.weights`.
+
+Since detector might process video only with 3 frames/sec I decided to record it and then manually increase the speed 10x times so it became 30 fps.
 
 
