@@ -99,8 +99,8 @@ Of course sometimes when pedestrians just stuck in each other detector can not r
 
 I've tested detector on images that weren't included to train/test data and it has shown quite good results. With our weights, detector shows much better accuracy than default `yolo.weights`.
 
-Since detector might process video only with 3 frames/sec I decided to record it and then manually increase to make it looks normally.
+Since detector might process video only with 3 frames/sec I decided to record it and then manually increase to make it looks normally. You can see results on the video below.
 
-[![](https://image.ibb.co/fOyEbR/128.png)](https://youtu.be/1w7PjwaMtwk)
+[![](https://image.ibb.co/kHc2Y6/123.png)](https://youtu.be/1w7PjwaMtwk)
 
 
