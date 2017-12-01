@@ -18,6 +18,11 @@ img_list.sort()
 img_height = f['ground_truth_data/imgsize'][0, 0]/6
 img_width = f['ground_truth_data/imgsize'][1, 0]/6
 
+"""
+Compare all image names from data set with images we converted
+from videos if they're fit create an annotation with ground truth
+for each and move them to a separate folder.
+"""
 for x in range(f['ground_truth_data/list'].shape[1]):
     bbox = f[f['ground_truth_data/list'][0, x]]['bbox'][:].transpose()/6
     imgname = ''.join([chr(c) for c in f[f['ground_truth_data/list'][0, x]]['imgname'][:]])
